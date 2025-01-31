@@ -8,7 +8,7 @@ import { routes } from './app.routes';
   selector: 'app-root',
   imports: [routes, PassengerDashboardModule, PassengerDashboardComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'airline';

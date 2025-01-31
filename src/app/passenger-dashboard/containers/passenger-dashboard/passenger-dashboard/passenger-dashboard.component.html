@@ -1,16 +1,16 @@
-<!-- filepath: /C:/Users/pansa/Angular-Project/airline/src/app/passenger-dashboard/containers/passenger-dashboard/passenger-dashboard/passenger-dashboard.component.html -->
 <div class="app">
     <app-passenger-count [items]="passengers"> </app-passenger-count>
     <div *ngFor="let passenger of passengers">
-        <app-passenger-detail [detail]="passenger"></app-passenger-detail>
+        {{ passenger.fullname }}
     </div>
+    <app-passenger-detail *ngFor="let passenger of passengers;" [detail]="passenger" (edit)="handleEdit($event)"
+        (remove)="handleRemove($event)"></app-passenger-detail>
 
     <h1>Airline Passengers</h1>
     <ul>
         <ng-container *ngFor="let passenger of passengers; let i = index">
             <span class="status" [ngStyle]="{
-        backgroundColor: (passenger.checkedIn ? 'red' : '#2ecc71')
-    }"></span>
+        backgroundColor: (passenger.checkedIn ? 'red' : '#2ecc71')}"></span>
             <li>
                 {{ i }}: {{ passenger.fullname }}
                 <p>{{ passenger | json}}</p>

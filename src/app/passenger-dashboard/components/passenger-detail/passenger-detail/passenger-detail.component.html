@@ -1,0 +1,11 @@
+<div>
+    <span class="status" [class.checked-in]="detail?.checkedIn"></span>
+    {{detail?.fullname}}
+    <div class="date">
+        Check in date:{{ detail?.checkInDate ? (detail?.checkInDate | date: 'MMMM d, y' ) :
+        'Not checked in'}}
+    </div>
+    <div class="children">
+        children: {{ detail?.children?.length ?? 0 }}
+    </div>
+</div>
